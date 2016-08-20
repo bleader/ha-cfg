@@ -1,0 +1,290 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: 48.80569
+  longitude: 2.130699
+  # C for Celsius, F for Fahrenheit
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Paris
+
+  customize:
+    sensor.fibaro_system_fgd212_dimmer_2_energy_3:
+      friendly_name: Total Salon
+    sensor.fibaro_system_fgd212_dimmer_2_power_3:
+      friendly_name: Instant. Salon 
+    sensor.yr_symbol:
+      friendly_name: Meteo
+    sensor.everspring_ad147_plugin_dimmer_module_alarm_level_2:
+      hidden: true
+    sensor.everspring_ad147_plugin_dimmer_module_alarm_type_2:
+      hidden: true
+    sensor.everspring_ad147_plugin_dimmer_module_power_management_2:
+      hidden: true
+    sensor.everspring_ad147_plugin_dimmer_module_sourcenodeid_2:
+      hidden: true
+    sensor.fibaro_system_fgd212_dimmer_2_alarm_level_3:
+      hidden: true
+    sensor.fibaro_system_fgd212_dimmer_2_alarm_type_3:
+      hidden: true
+    sensor.fibaro_system_fgd212_dimmer_2_heat_3:
+      hidden: true
+    sensor.fibaro_system_fgd212_dimmer_2_power_management_3:
+      hidden: true
+    sensor.fibaro_system_fgd212_dimmer_2_sourcenodeid_3:
+      hidden: true
+    sensor.fibaro_system_fgd212_dimmer_2_system_3:
+      hidden: true
+
+    light.everspring_ad147_plugin_dimmer_module_level_2:
+      friendly_name: Lampadaire
+    light.fibaro_system_fgd212_dimmer_2_level_3:
+      friendly_name: Salon
+    light.fibaro_system_fgd212_dimmer_2_level_3_2:
+      hidden: true
+    light.fibaro_system_fgd212_dimmer_2_step_size_3:
+      hidden: true
+    light.fibaro_system_fgd212_dimmer_2_step_size_3_2:
+      hidden: true
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend
+#conversation:
+
+# View all events in a logbook
+logbook:
+
+# Enables the frontend
+frontend:
+
+# Track the sun
+sun:
+
+# Prediction of weather
+sensor:
+   platform: yr
+
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables support for tracking state changes over time.
+history:
+
+# Checks for available updates
+updater:
+
+weblink:
+  entities:
+    - name: Torrents
+      url: http://192.168.0.2:9091
+      icon: mdi:download
+
+media_player:
+  platform: kodi
+  host: http://192.168.0.12
+  port: 80
+  name: Kodi
+
+zwave:
+  usb_path: /dev/cuaU0
+  config_path: /usr/local/lib/python3.4/site-packages/libopenzwave-0.3.1-py3.4-freebsd-10.3-RELEASE-amd64.egg/config
+  polling_interval: 60000
+
+device_tracker:
+  platform: nmap_tracker
+  hosts: 192.168.0.1/24
+  home_interval: 10
+  track_new_devices: no
+
+switch 1:
+  platform: wake_on_lan
+  mac_address: "bc:5f:f4:f0:98:9b"
+  name: PC raton
+  host: "192.168.0.13"
+
+sensor 2:
+  platform: speedtest
+  minute: 30
+  hour:
+    - 0
+    - 6
+    - 12
+    - 18
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+
+sensor 3:
+  platform: transmission
+  host: 192.168.0.2
+  port: 9091
+  monitored_variables:
+    - 'download_speed'
+    - 'upload_speed'
+    #- 'current_status'
+
+input_select:
+  current_mode:
+    name: "Mode"
+    options:
+      - Jour
+      - Soir
+      - Soiree
+      - Nuit
+      - Absent
+    initial: Jour
+    icon: mdi:power-settings
+
+automation: 
+  - alias: Jour
+    trigger:
+      - platform: state
+        entity_id: input_select.current_mode
+        state: "Jour"
+    action:
+      service: light.turn_off
+
+  - alias: Soir
+    trigger:
+      - platform: state
+        entity_id: input_select.current_mode
+        state: "Soir"
+    action:
+      service: light.turn_on
+      data:
+        entity_id: light.fibaro_system_fgd212_dimmer_2_level_3
+        brightness: 90
+
+  - alias: Soiree
+    trigger:
+      - platform: state
+        entity_id: input_select.current_mode
+        state: "Soiree"
+    action:
+      service: light.turn_on
+      data:
+        entity_id: light.fibaro_system_fgd212_dimmer_2_level_3
+        brightness: 90
+
+  - alias: Nuit
+    trigger:
+      - platform: state
+        entity_id: input_select.current_mode
+        state: "Nuit"
+    action:
+      service: light.turn_on
+      data:
+        entity_id: light.fibaro_system_fgd212_dimmer_2_level_3
+        brightness: 10
+
+  - alias: Absent
+    trigger:
+      - platform: state
+        entity_id: input_select.current_mode
+        state: "Absent"
+    action:
+      service: light.turn_on
+      data:
+        entity_id: light.fibaro_system_fgd212_dimmer_2_level_3
+        brightness: 10
+
+  - alias: "Kodi paused/stopped"
+    trigger:
+      - platform: state
+        entity_id: media_player.kodi
+        from: 'playing'
+    condition:
+      - condition: state
+        entity_id: input_select.current_mode
+        state: Soir
+      - condition: template
+        value_template: '{{ states.media_player.kodi.media_content_type != "video" }}'
+    action:
+      service: light.turn_on
+      entity_id: light.fibaro_system_fgd212_dimmer_2_level_3
+      data:
+        brightness: 90
+
+  - alias: "Kodi playing"
+    trigger:
+      - platform: state
+        entity_id: media_player.kodi
+        to: 'playing'
+    condition:
+      - condition: state
+        entity_id: input_select.current_mode
+        state: Soir
+      - condition: template
+        value_template: '{{ states.media_player.kodi.media_content_type != "video" }}'
+    action:
+      service: light.turn_on
+      entity_id: light.fibaro_system_fgd212_dimmer_2_level_3
+      data:
+        brightness: 30
+
+  - alias: "chromecast paused/stopped"
+    trigger:
+      - platform: state
+        entity_id: media_player.ratoncast
+        from: 'playing'
+    condition:
+      - condition: state
+        entity_id: input_select.current_mode
+        state: Soir
+    action:
+      service: light.turn_on
+      entity_id: light.fibaro_system_fgd212_dimmer_2_level_3
+      data:
+        brightness: 90
+
+  - alias: "chromecast playing"
+    trigger:
+      - platform: state
+        entity_id: media_player.ratoncast
+        to: 'playing'
+    condition:
+      - condition: state
+        entity_id: input_select.current_mode
+        state: Soir
+    action:
+      service: light.turn_on
+      entity_id: light.fibaro_system_fgd212_dimmer_2_level_3
+      data:
+        brightness: 30
+
+  - alias: "night time"
+    trigger:
+      - platform: time
+        hours: 1
+        minutes: 30
+        seconds: 0
+    action:
+      service: input_select.select_option
+      data:
+        entity_id: input_select.current_mode
+        option: "Nuit"
+      
+  - alias: "day time"
+    trigger:
+      - platform: sun
+        event: sunrise
+    action:
+      service: input_select.select_option
+      data:
+        entity_id: input_select.current_mode
+        option: "Jour"
+
+  - alias: "evening time"
+    trigger:
+      - platform: sun
+        event: sunset
+        offset: "-02:30:00"
+    action:
+      service: input_select.select_option
+      data:
+        entity_id: input_select.current_mode
+        option: "Soir"
