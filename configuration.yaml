@@ -1,44 +1,28 @@
 homeassistant:
-  # Name of the location where Home Assistant is running
   name: Famille des Ratons
-  # Location required to calculate the time the sun rises and sets
   latitude: 48.80569
   longitude: 2.130699
-  # C for Celsius, F for Fahrenheit
   unit_system: metric
-  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-  time_zone: Europe/Paris
+  time_zone: Europe/Paris # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
   customize:
     !include includes/customize.yaml
 
-# Discover some devices automatically
 discovery:
 
-# Allows you to issue voice commands from the frontend
-#conversation:
-
-# View all events in a logbook
 logbook:
 
-# Enables the frontend
 frontend:
 
-# Track the sun
 sun:
+
+history:
+
+updater:
 
 # Prediction of weather
 sensor:
    platform: yr
-
-# Show links to resources in log and frontend
-#introduction:
-
-# Enables support for tracking state changes over time.
-history:
-
-# Checks for available updates
-updater:
 
 weblink:
   entities:
