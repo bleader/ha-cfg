@@ -83,7 +83,6 @@ input_select:
       - Soir
       - Soiree
       - Nuit
-      - Absent
     initial: Jour
     icon: mdi:power-settings
 
