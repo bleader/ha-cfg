@@ -1,0 +1,11 @@
+alias: "evening time"
+  trigger:
+    - platform: sun
+      event: sunset
+      offset: "-02:30:00"
+  action:
+    service: input_select.select_option
+    data:
+      entity_id: input_select.current_mode
+      option: "Soir"
+

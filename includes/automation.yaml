@@ -1,0 +1,11 @@
+- !include includes/automation/kodi_stop.yaml
+- !include includes/automation/kodi_play.yaml
+- !include includes/automation/cast_stop.yaml
+- !include includes/automation/cast_play.yaml
+- !include includes/automation/switch_to_day.yaml
+- !include includes/automation/switch_to_evening.yaml
+- !include includes/automation/switch_to_party.yaml
+- !include includes/automation/switch_to_night.yaml
+- !include includes/automation/time_night.yaml
+- !include includes/automation/time_day.yaml
+- !include includes/automation/time_evening.yaml

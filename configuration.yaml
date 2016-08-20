@@ -24,9 +24,7 @@ sensor:
   !include includes/sensors.yaml
 
 automation: 
-  - !include includes/automation/modes_effect.yaml
-  - !include includes/automation/media_playing.yaml
-  - !include includes/automation/modes_trigger.yaml
+  !include includes/automation.yaml
 
 #simply enable various components
 discovery:
