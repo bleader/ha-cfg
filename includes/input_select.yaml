@@ -1,9 +1,9 @@
-- current_mode:
+current_mode:
   name: "Mode"
-    options:
-      - Jour
-      - Soir
-      - Soiree
-      - Nuit
-    initial: Jour
-    icon: mdi:power-settings
+  options:
+    - Jour
+    - Soir
+    - Soiree
+    - Nuit
+  initial: Jour
+  icon: mdi:power-settings
