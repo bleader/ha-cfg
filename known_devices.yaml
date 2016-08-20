@@ -1,0 +1,140 @@
+
+192168012:
+  name: Raton
+  mac: C0:EE:FB:20:44:67
+  picture: 
+  track: yes
+  hide_if_away: no
+
+192168016:
+  name: Camille
+  mac: 00:0C:E7:4C:8C:70
+  picture: 
+  track: yes
+  hide_if_away: no
+
+192168011:
+  name: 192.168.0.11
+  mac: 40:65:A3:96:60:2E
+  picture: 
+  track: no
+  hide_if_away: no
+
+19216803:
+  name: 192.168.0.3
+  mac: 02:FF:B0:00:06:0B
+  picture: 
+  track: no
+  hide_if_away: no
+
+19216801:
+  name: 192.168.0.1
+  mac: 40:65:A3:0A:54:5C
+  picture: 
+  track: no
+  hide_if_away: no
+
+192168010:
+  name: 192.168.0.10
+  mac: 40:65:A3:96:60:2F
+  picture: 
+  track: no
+  hide_if_away: no
+
+19216805:
+  name: 192.168.0.5
+  mac: 02:FF:B0:00:08:0B
+  picture: 
+  track: no
+  hide_if_away: no
+
+19216802:
+  name: 192.168.0.2
+  mac: 02:FF:B0:00:05:0B
+  picture: 
+  track: no
+  hide_if_away: no
+
+homeassistant:
+  name: homeassistant
+  mac: 02:FF:B0:00:09:0B
+  picture: 
+  track: no
+  hide_if_away: no
+
+192168014:
+  name: 192.168.0.14
+  mac: 02:FF:60:00:05:0A
+  picture: 
+  track: no
+  hide_if_away: no
+
+192168015:
+  name: 192.168.0.15
+  mac: B8:27:EB:F6:CF:C4
+  picture: 
+  track: no
+  hide_if_away: no
+
+192168013:
+  name: 192.168.0.13
+  mac: BC:5F:F4:F0:98:9B
+  picture: 
+  track: no
+  hide_if_away: no
+
+192168017:
+  name: 192.168.0.17
+  mac: 6C:AD:F8:B3:40:FF
+  picture: 
+  track: no
+  hide_if_away: no
+
+192168018:
+  name: 192.168.0.18
+  mac: 48:D2:24:E1:72:04
+  picture: 
+  track: no
+  hide_if_away: no
+
+192168019:
+  name: 192.168.0.19
+  mac: FC:AA:14:9D:86:39
+  picture: 
+  track: no
+  hide_if_away: no
+
+192168018_2:
+  name: 192.168.0.18
+  mac: 60:01:94:01:39:7B
+  picture: 
+  track: no
+  hide_if_away: no
+
+192168020:
+  name: 192.168.0.20
+  mac: 00:23:4D:E3:E7:43
+  picture: 
+  track: no
+  hide_if_away: no
+
+192168021:
+  name: 192.168.0.21
+  mac: 68:17:29:EC:87:7C
+  picture: 
+  track: no
+  hide_if_away: no
+
+192168023:
+  name: 192.168.0.23
+  mac: 98:D6:F7:6A:66:EB
+  picture: 
+  track: no
+  hide_if_away: no
+
+192168024:
+  name: 192.168.0.24
+  mac: F8:32:E4:4E:15:4B
+  picture: 
+  track: no
+  hide_if_away: no
