@@ -21,6 +21,9 @@ zwave:
 device_tracker:
   !include includes/device_tracker.yaml
 
+input_select:
+  !include includes/input_select.yaml
+
 sensor 2:
   platform: speedtest
   minute: 30
@@ -43,16 +46,6 @@ sensor 3:
     - 'upload_speed'
     #- 'current_status'
 
-input_select:
-  current_mode:
-    name: "Mode"
-    options:
-      - Jour
-      - Soir
-      - Soiree
-      - Nuit
-    initial: Jour
-    icon: mdi:power-settings
 
 automation: 
   !include includes/automation/modes_effect.yaml
