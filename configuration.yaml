@@ -88,58 +88,7 @@ input_select:
     icon: mdi:power-settings
 
 automation: 
-  - alias: Jour
-    trigger:
-      - platform: state
-        entity_id: input_select.current_mode
-        state: "Jour"
-    action:
-      service: light.turn_off
-
-  - alias: Soir
-    trigger:
-      - platform: state
-        entity_id: input_select.current_mode
-        state: "Soir"
-    action:
-      service: light.turn_on
-      data:
-        entity_id: light.fibaro_system_fgd212_dimmer_2_level_3
-        brightness: 90
-
-  - alias: Soiree
-    trigger:
-      - platform: state
-        entity_id: input_select.current_mode
-        state: "Soiree"
-    action:
-      service: light.turn_on
-      data:
-        entity_id: light.fibaro_system_fgd212_dimmer_2_level_3
-        brightness: 90
-
-  - alias: Nuit
-    trigger:
-      - platform: state
-        entity_id: input_select.current_mode
-        state: "Nuit"
-    action:
-      service: light.turn_on
-      data:
-        entity_id: light.fibaro_system_fgd212_dimmer_2_level_3
-        brightness: 10
-
-  - alias: Absent
-    trigger:
-      - platform: state
-        entity_id: input_select.current_mode
-        state: "Absent"
-    action:
-      service: light.turn_on
-      data:
-        entity_id: light.fibaro_system_fgd212_dimmer_2_level_3
-        brightness: 10
-
+  !include includes/automation/modes.yaml
   - alias: "Kodi paused/stopped"
     trigger:
       - platform: state
