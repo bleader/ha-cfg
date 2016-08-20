@@ -35,12 +35,6 @@ device_tracker:
   home_interval: 10
   track_new_devices: no
 
-switch 1:
-  platform: wake_on_lan
-  mac_address: "bc:5f:f4:f0:98:9b"
-  name: PC raton
-  host: "192.168.0.13"
-
 sensor 2:
   platform: speedtest
   minute: 30
