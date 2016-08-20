@@ -13,10 +13,7 @@ sensor:
    platform: yr
 
 media_player:
-  platform: kodi
-  host: http://192.168.0.12
-  port: 80
-  name: Kodi
+  !include includes/media_player.yaml
 
 zwave:
   usb_path: /dev/cuaU0

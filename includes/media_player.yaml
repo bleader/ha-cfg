@@ -1,0 +1,4 @@
+- platform: kodi
+  host: http://192.168.0.12
+  port: 80
+  name: Kodi
