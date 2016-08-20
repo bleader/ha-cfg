@@ -12,12 +12,6 @@ homeassistant:
 sensor:
    platform: yr
 
-weblink:
-  entities:
-    - name: Torrents
-      url: http://192.168.0.2:9091
-      icon: mdi:download
-
 media_player:
   platform: kodi
   host: http://192.168.0.12
