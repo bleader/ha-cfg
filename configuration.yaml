@@ -87,7 +87,7 @@ input_select:
     icon: mdi:power-settings
 
 automation: 
-  !include includes/automation/modes.yaml
+  !include includes/automation/modes_effect.yaml
   - alias: "Kodi paused/stopped"
     trigger:
       - platform: state
