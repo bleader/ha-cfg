@@ -1,0 +1,23 @@
+# meteo
+- platform: yr
+
+# speedtest
+- platform: speedtest
+  minute: 30
+  hour:
+    - 0
+    - 6
+    - 12
+    - 18
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+
+# transmission torrent client status
+- platform: transmission
+  host: 192.168.0.2
+  port: 9091
+  monitored_variables:
+    - 'download_speed'
+    - 'upload_speed'

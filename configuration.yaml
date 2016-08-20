@@ -8,10 +8,6 @@ homeassistant:
   customize:
     !include includes/customize.yaml
 
-# Prediction of weather
-sensor:
-   platform: yr
-
 media_player:
   !include includes/media_player.yaml
 
@@ -24,28 +20,8 @@ device_tracker:
 input_select:
   !include includes/input_select.yaml
 
-sensor 2:
-  platform: speedtest
-  minute: 30
-  hour:
-    - 0
-    - 6
-    - 12
-    - 18
-  monitored_conditions:
-    - ping
-    - download
-    - upload
-
-sensor 3:
-  platform: transmission
-  host: 192.168.0.2
-  port: 9091
-  monitored_variables:
-    - 'download_speed'
-    - 'upload_speed'
-    #- 'current_status'
-
+sensor:
+  !include includes/sensors.yaml
 
 automation: 
   !include includes/automation/modes_effect.yaml
