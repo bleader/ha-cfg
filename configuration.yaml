@@ -8,18 +8,6 @@ homeassistant:
   customize:
     !include includes/customize.yaml
 
-discovery:
-
-logbook:
-
-frontend:
-
-sun:
-
-history:
-
-updater:
-
 # Prediction of weather
 sensor:
    platform: yr
@@ -91,3 +79,10 @@ automation:
   !include includes/automation/media_playing.yaml
   !include includes/automation/modes_trigger.yaml
 
+#simply enable various components
+discovery:
+logbook:
+frontend:
+sun:
+history:
+updater:
