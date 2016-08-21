@@ -21,3 +21,17 @@
   monitored_variables:
     - 'download_speed'
     - 'upload_speed'
+
+# temperature test
+- platform: mqtt
+  state_topic: devices/01397be0/temperature/degrees
+  name: "Test temperature"
+  qos: 0
+  unit_of_measurement: "°C"
+          
+# humidity test
+- platform: mqtt
+  state_topic: devices/01397be0/humidity/relative
+  name: "Test humidity"
+  qos: 0
+  unit_of_measurement: "%"

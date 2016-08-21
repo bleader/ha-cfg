@@ -33,3 +33,4 @@ frontend:
 sun:
 history:
 updater:
+mqtt:
