@@ -1,10 +1,10 @@
 alias: "day time"
-  trigger:
-    - platform: sun
-      event: sunrise
-  action:
-    service: input_select.select_option
-    data:
-      entity_id: input_select.current_mode
-      option: "Jour"
+trigger:
+  - platform: sun
+    event: sunrise
+action:
+  service: input_select.select_option
+  data:
+    entity_id: input_select.current_mode
+    option: "Jour"
 

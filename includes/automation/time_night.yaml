@@ -1,11 +1,11 @@
 alias: "night time"
-  trigger:
-    - platform: time
-      hours: 1
-      minutes: 30
-      seconds: 0
-  action:
-    service: input_select.select_option
-    data:
-      entity_id: input_select.current_mode
-      option: "Nuit"
+trigger:
+  - platform: time
+    hours: 1
+    minutes: 30
+    seconds: 0
+action:
+  service: input_select.select_option
+  data:
+    entity_id: input_select.current_mode
+    option: "Nuit"

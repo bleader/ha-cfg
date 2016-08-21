@@ -1,11 +1,11 @@
 alias: Soiree
-  trigger:
-    - platform: state
-      entity_id: input_select.current_mode
-      state: "Soiree"
-  action:
-    service: light.turn_on
-    data:
-      entity_id: light.fibaro_system_fgd212_dimmer_2_level_3
-      brightness: 90
+trigger:
+  - platform: state
+    entity_id: input_select.current_mode
+    state: "Soiree"
+action:
+  service: light.turn_on
+  data:
+    entity_id: light.fibaro_system_fgd212_dimmer_2_level_3
+    brightness: 90
 

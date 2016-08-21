@@ -1,7 +1,7 @@
 alias: Jour
-  trigger:
-    - platform: state
-      entity_id: input_select.current_mode
-      state: "Jour"
-  action:
-    service: light.turn_off
+trigger:
+  - platform: state
+    entity_id: input_select.current_mode
+    state: "Jour"
+action:
+  service: light.turn_off
