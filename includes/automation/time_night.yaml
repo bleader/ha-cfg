@@ -1,4 +1,5 @@
 alias: "night time"
+hide_entity: True
 trigger:
   - platform: time
     hours: 1

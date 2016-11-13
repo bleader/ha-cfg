@@ -1,4 +1,5 @@
 alias: "day time"
+hide_entity: True
 trigger:
   - platform: sun
     event: sunrise
