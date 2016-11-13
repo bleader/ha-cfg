@@ -24,14 +24,21 @@
 
 # temperature test
 - platform: mqtt
-  state_topic: devices/01397be0/temperature/degrees
+  state_topic: devices/006500e0/temperature/degrees
   name: "Test temperature"
   qos: 0
   unit_of_measurement: "°C"
           
 # humidity test
 - platform: mqtt
-  state_topic: devices/01397be0/humidity/relative
+  state_topic: devices/006500e0/humidity/relative
   name: "Test humidity"
   qos: 0
   unit_of_measurement: "%"
+
+# pressure test
+- platform: mqtt
+  state_topic: devices/006500e0/pressure/pressure
+  name: "Test pressure"
+  qos: 0
+  unit_of_measurement: "hPa"
