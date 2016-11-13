@@ -26,6 +26,9 @@ sensor:
 automation: 
   !include includes/automation.yaml
 
+light:
+  !include includes/lights.yaml
+
 #simply enable various components
 discovery:
 logbook:
