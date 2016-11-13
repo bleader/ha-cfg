@@ -138,3 +138,38 @@ homeassistant:
   picture: 
   track: no
   hide_if_away: no
+
+184f3248fba8:
+  name: 184f3248fba8
+  mac: 18:4F:32:48:FB:A8
+  picture: 
+  track: no
+  hide_if_away: no
+
+ccfa00b5339f:
+  name: ccfa00b5339f
+  mac: CC:FA:00:B5:33:9F
+  picture: 
+  track: no
+  hide_if_away: no
+
+c0eefb3286c3:
+  name: c0eefb3286c3
+  mac: C0:EE:FB:32:86:C3
+  picture: 
+  track: no
+  hide_if_away: no
+
+5c9656022fb7:
+  name: 5c9656022fb7
+  mac: 5C:96:56:02:2F:B7
+  picture: 
+  track: no
+  hide_if_away: no
+
+600194006500:
+  name: 600194006500
+  mac: 60:01:94:00:65:00
+  picture: 
+  track: no
+  hide_if_away: no
