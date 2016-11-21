@@ -29,7 +29,11 @@ automation:
 light:
   !include includes/lights.yaml
 
-#simply enable various components
+# set recorder to delete things older than 15 days
+recorder:
+  purge_days: 15
+
+# simply enable various components
 discovery:
 logbook:
 frontend:
