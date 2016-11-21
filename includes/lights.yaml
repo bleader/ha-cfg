@@ -1,3 +1,3 @@
 - platform: mqtt
-  state_topic: "devices/006500e0/light/on"
-  command_topic: "devices/006500e0/light/on/set"
+  state_topic: "homie/006500e0/light/on"
+  command_topic: "homie/006500e0/light/on/set"
