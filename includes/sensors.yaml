@@ -22,23 +22,31 @@
     - 'download_speed'
     - 'upload_speed'
 
-# temperature test
+# OUTSIDE SENSOR
+# temperature outside
 - platform: mqtt
-  state_topic: homie/006500e0/temperature/degrees
-  name: "Test temperature"
+  state_topic: homie/bme-ext/temperature/degrees
+  name: "Temperature Exterieure"
   qos: 0
   unit_of_measurement: "°C"
           
-# humidity test
+# humidity outside
 - platform: mqtt
-  state_topic: homie/006500e0/humidity/relative
-  name: "Test humidity"
+  state_topic: homie/bme-ext/humidity/relative
+  name: "Humidite Exterieure"
   qos: 0
   unit_of_measurement: "%"
 
-# pressure test
+# pressure outside
 - platform: mqtt
-  state_topic: homie/006500e0/pressure/pressure
-  name: "Test pressure"
+  state_topic: homie/bme-ext/pressure/pressure
+  name: "Pression Exterieure"
   qos: 0
   unit_of_measurement: "hPa"
+
+# battery outside
+- platform: mqtt
+  state_topic: homie/bme-ext/battery/battery
+  name: "Batterie Exterieure"
+  qos: 0
+  unit_of_measurement: "V"
