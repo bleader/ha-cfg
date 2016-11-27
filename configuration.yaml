@@ -29,6 +29,9 @@ automation:
 light:
   !include includes/lights.yaml
 
+group:
+  !include includes/groups.yaml
+
 # set recorder to delete things older than 15 days
 recorder:
   purge_days: 15

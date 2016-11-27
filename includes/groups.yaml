@@ -1,0 +1,14 @@
+Lumieres:
+  entities:
+    - input_select.current_mode
+    - light.everspring_ad147_plugin_dimmer_module_level_2_0
+    - light.fibaro_system_fgd212_dimmer_2_level_3_0
+Meteo:
+  entities:
+    - sun.sun
+    - sensor.yr_symbol
+Exterieur:
+    - sensor.temperature_exterieure
+    - sensor.humidite_exterieure
+    - sensor.pression_exterieure
+    - sensor.batterie_exterieure
