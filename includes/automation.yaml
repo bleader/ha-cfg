@@ -4,7 +4,7 @@
 - !include automation/cast_play.yaml
 - !include automation/switch_to_day.yaml
 - !include automation/switch_to_evening.yaml
-- !include automation/switch_to_party.yaml
+- !include automation/switch_to_movie.yaml
 - !include automation/switch_to_night.yaml
 - !include automation/time_night.yaml
 - !include automation/time_day.yaml

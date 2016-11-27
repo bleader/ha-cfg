@@ -3,7 +3,7 @@ current_mode:
   options:
     - Jour
     - Soir
-    - Soiree
+    - Film
     - Nuit
   initial: Jour
   icon: mdi:power-settings

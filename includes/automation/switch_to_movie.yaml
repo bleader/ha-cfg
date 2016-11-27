@@ -1,9 +1,9 @@
-alias: Soiree
+alias: Film
 hide_entity: True
 trigger:
   - platform: state
     entity_id: input_select.current_mode
-    state: "Soiree"
+    state: "Film"
 action:
   service: light.turn_on
   data:

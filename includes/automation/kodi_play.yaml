@@ -7,7 +7,7 @@ trigger:
 condition:
   - condition: state
     entity_id: input_select.current_mode
-    state: Soir
+    state: Film
   - condition: template
     value_template: '{{ states.media_player.kodi.media_content_type != "video" }}'
 action:

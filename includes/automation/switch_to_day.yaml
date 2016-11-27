@@ -6,3 +6,5 @@ trigger:
     state: "Jour"
 action:
   service: light.turn_off
+  data:
+    entity_id: light.fibaro_system_fgd212_dimmer_2_level_3_0
