@@ -173,3 +173,10 @@ c0eefb3286c3:
   picture: 
   track: no
   hide_if_away: no
+
+600194006add:
+  hide_if_away: false
+  mac: 60:01:94:00:6A:DD
+  name: 600194006add
+  picture:
+  track: false
