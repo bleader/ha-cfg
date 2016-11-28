@@ -50,3 +50,25 @@
   name: "Batterie Exterieure"
   qos: 0
   unit_of_measurement: "V"
+
+# INSIDE SENSOR
+# temperature outside
+- platform: mqtt
+  state_topic: homie/bme-int/temperature/degrees
+  name: "Temperature Interieure"
+  qos: 0
+  unit_of_measurement: "°C"
+
+# humidity outside
+- platform: mqtt
+  state_topic: homie/bme-int/humidity/relative
+  name: "Humidite Interieure"
+  qos: 0
+  unit_of_measurement: "%"
+
+# pressure outside
+- platform: mqtt
+  state_topic: homie/bme-int/pressure/pressure
+  name: "Pression Interieure"
+  qos: 0
+  unit_of_measurement: "hPa"

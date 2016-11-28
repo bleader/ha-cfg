@@ -12,3 +12,7 @@ Exterieur:
     - sensor.humidite_exterieure
     - sensor.pression_exterieure
     - sensor.batterie_exterieure
+Interieur:
+    - sensor.temperature_interieure
+    - sensor.humidite_interieure
+    - sensor.pression_interieure
