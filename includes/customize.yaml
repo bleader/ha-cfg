@@ -47,3 +47,15 @@ sensor.everspring_ad147_plugin_dimmer_module_sourcenodeid_2_2:
 # others
 sensor.yr_symbol:
   friendly_name: Meteo
+
+# bme280 sensors
+sensor.humidite_exterieure:
+  icon: mdi:water-percent
+sensor.pression_exterieure:
+  icon: mdi:gauge
+sensor.batterie_exterieure:
+  icon: mdi:battery-charging
+sensor.humidite_interieure:
+  icon: mdi:water-percent
+sensor.pression_interieure:
+  icon: mdi:gauge
